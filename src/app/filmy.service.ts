@@ -23,6 +23,6 @@ export class FilmyService {
   }
 
   allMovies() {
-    return this.http.get(`${this.baseUrl}/api/filmy/`, { headers: this.httpHeaders });
+    return this.http.get(`${this.baseUrl}api/filmy/`, { headers: this.httpHeaders });
   }
 }

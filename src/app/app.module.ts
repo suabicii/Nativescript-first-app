@@ -6,6 +6,7 @@ import { AppComponent } from "./app.component";
 import { FilmyComponent } from './filmy/filmy.component';
 import { FilmyService } from './filmy.service';
 import { HttpClientModule } from '@angular/common/http';
+import { DetailsComponent } from './details/details.component';
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     ],
     declarations: [
         AppComponent,
-        FilmyComponent
+        FilmyComponent,
+        DetailsComponent
     ],
     providers: [
         FilmyService

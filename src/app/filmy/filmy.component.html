@@ -1,6 +1,9 @@
 <ActionBar title="Lista filmów" class="action-bar">
 </ActionBar>
 
-<WrapLayout>
-    <img [src]="movie.poster" width="150px" *ngFor="let movie of movies" />
-</WrapLayout>
+<ScrollView class="page">
+    <WrapLayout>
+        <img [src]="movie.poster" width="150" class="m-t-15 m-l-15" *ngFor="let movie of movies"
+            [nsRouterLink]="['/film', movie.id]" />
+    </WrapLayout>
+</ScrollView>

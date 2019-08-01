@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FilmyService } from '../filmy.service';
+import { Film } from '../film-type';
 
 @Component({
   selector: 'ns-filmy',
@@ -9,7 +10,7 @@ import { FilmyService } from '../filmy.service';
 })
 export class FilmyComponent implements OnInit {
 
-  movies;
+  movies: Film[];
 
   constructor(private filmyService: FilmyService) { }
 

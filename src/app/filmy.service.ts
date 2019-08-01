@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { isAndroid } from 'tns-core-modules/platform';
+import { Film } from './film-type';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +15,6 @@ export class FilmyService {
     { 'Authorization': `Token ${this.token}` }
   );
 
-  movies = [{ 'title': 'Titanic' }]
-
   constructor(private http: HttpClient) {
     if (isAndroid) {
       this.baseUrl = 'http://10.0.2.2:8000/';
@@ -22,7 +22,11 @@ export class FilmyService {
 
   }
 
-  allMovies() {
-    return this.http.get(`${this.baseUrl}api/filmy/`, { headers: this.httpHeaders });
+  allMovies(): Observable<Film[]> {
+    return this.http.get<Film[]>(`${this.baseUrl}api/filmy/`, { headers: this.httpHeaders });
+  }
+
+  getMovie(id: number): Observable<Film> {
+    return this.http.get<Film>(`${this.baseUrl}api/filmy/${id}/`, { headers: this.httpHeaders });
   }
 }

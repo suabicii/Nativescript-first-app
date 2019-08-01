@@ -1,0 +1,12 @@
+<ActionBar [title]="movie?.title" class="action-bar">
+    <NavigationButton text="Powrót" (tap)="goBack()" android.systemIcon="ic_menu_back"></NavigationButton>
+</ActionBar>
+
+<StackLayout orientation="horizontal" class="page">
+    <img [src]="mediaUrl + movie?.poster" width="150" class="m-15" verticalAlignment="top" />
+    <StackLayout orientation="vertical">
+        <label [text]="movie?.title" class="h1"></label>
+        <label [text]="movie?.year" class="h2"></label>
+        <label [text]="movie?.description" class="h4" textWrap="true"></label>
+    </StackLayout>
+</StackLayout>
